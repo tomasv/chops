@@ -1,6 +1,11 @@
 # Chops
 
-TODO: Write a gem description
+Chops provides you with a view context in Rails in any of your objects.
+All you need to do is include `Chops::ViewHelpers`.
+
+## Is it stable?
+
+Nope. I hacked this together as a proof of concept in 30 minutes.
 
 ## Installation
 
@@ -12,13 +17,30 @@ And then execute:
 
     $ bundle
 
-Or install it yourself as:
-
-    $ gem install chops
-
 ## Usage
 
-TODO: Write usage instructions here
+Just include `Chops::ViewHelpers` where you need the context:
+
+```ruby
+class Tweet
+  include Chops::ViewHelpers
+
+  def initialize(text, user)
+    @text = text
+    @user = user
+  end
+
+  # helpers are available through #helpers (or #h for short)
+  def to_s
+    "Check out my profile in this super app! #{h.user_url @user}"
+  end
+end
+```
+
+## Credit
+
+This is esentially Draper but without any delegation stuff, so
+some of the code is heavily inspired by (copied from) it.
 
 ## Contributing
 
