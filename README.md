@@ -1,5 +1,7 @@
 # Chops
 
+[![Code Climate](https://codeclimate.com/github/tomasv/chops/badges/gpa.svg)](https://codeclimate.com/github/tomasv/chops)
+
 Chops provides you with a view context in Rails in any of your objects.
 All you need to do is include `Chops::ViewHelpers`.
 
